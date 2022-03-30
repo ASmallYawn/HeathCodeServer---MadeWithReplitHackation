@@ -16,16 +16,6 @@ def updateDBSF():
   url = "https://data.sfgov.org/resource/pyih-qa8i.json"
   r = requests.get(url, headers=headers)
   data = r.json()
-  
-  #dataSorted = {}
-  
-  #for value in data:
-  #  id = value["business_name"] 
-  #  if id in dataSorted:
-  #    dataSorted[id].append(value)
-  #  else:
-  #    dataSorted[id] = [value]
-
   replit.db["sf"] = json.dumps(data)
 
 #Chicago
@@ -37,17 +27,7 @@ def updateDBCH():
   
   url = "https://data.cityofchicago.org/resource/4ijn-s7e5.json"
   r = requests.get(url, headers=headers)
-  data = r.json()
-  
-  #dataSorted = {}
-  
-  #for value in data:
-  #  id = value["dba_name"] 
-  #  if id in dataSorted:
-  #    dataSorted[id].append(value)
-  #  else:
-  #    dataSorted[id] = [value]
-
+  data = r.json()  
   replit.db["ch"] = json.dumps(data)
 
 updateDBSF()
